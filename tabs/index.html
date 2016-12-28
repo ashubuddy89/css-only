@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Tabs with Css</title>
+  <link rel="stylesheet" type="text/css" href="css/tab.css"/>
+  <link rel="stylesheet" type="text/css" href="css/tab-type-2.css"/>
+</head>
+
+<body>
+  <section class="section">
+    <h1><center>Beauty of Form Elements : Tabs</center></h1>
+
+    <input name='tabStyle' type="radio" id='tab-with-parent-bound' class='hide' checked="checked"/>
+    <label class='tab-label' for='tab-with-parent-bound'>Tab With Parent Bound</label>
+
+    <input name='tabStyle' type="radio" id='tab-with-no-parent-bound' class='hide'/>
+    <label class='tab-label' for='tab-with-no-parent-bound'>Tab With No Parent Bound</label>
+
+    <article class='data-section hide' data-tab='tab-with-parent-bound'>
+        <input type="radio" name='tab' id="tab1" class="hide" checked="checked"/>
+        <input type="radio" name='tab' id="tab2" class="hide"/>
+        <input type="radio" name='tab' id="tab3" class="hide"/>
+        <input type="radio" name='tab' id="tab4" class="hide"/>
+        
+        <div class='data-action'>
+          <label for="tab1" class='tab-label'>Tab 1</label>
+          <label for="tab2" class='tab-label'>Tab 2</label>
+          <label for="tab3" class='tab-label'>Tab 3</label>
+          <label for="tab4" class='tab-label'>Tab 4</label>
+        </div>
+
+        <div class="data-content">
+          <article class="content-tab-block" for="tab1" style="visibility:hidden">
+            <h2>Tab Link 1</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into </p>
+          </article>
+
+          <article class="content-tab-block" for="tab2" style="visibility:hidden">
+            <h2>Tab Link 2</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          </article>
+
+          <article class="content-tab-block" for="tab3" style="visibility:hidden">
+            <h2>Tab Link 3</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          </article>
+
+          <article class="content-tab-block" for="tab4" style="visibility:hidden">
+            <h2>Tab Link 4</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          </article>
+        </div>
+
+    </article>
+
+
+    <article class='data-section hide' data-tab='tab-with-no-parent-bound'>
+        <input type="radio" name='tab-style-2' id="tab-1" class="hide radio-btn" />
+        <label for="tab-1" class='tab-label'>Tab Link 1</label>
+        
+        <input type="radio" name='tab-style-2' id="tab-2" class="hide radio-btn" checked="checked"/>
+        <label for="tab-2" class='tab-label'>Tab Link 2</label>
+        
+        <input type="radio" name='tab-style-2' id="tab-3" class="hide radio-btn"/>
+        <label for="tab-3" class='tab-label'>Tab Link 3</label>
+        
+        <input type="radio" name='tab-style-2' id="tab-4" class="hide radio-btn"/>
+        <label for="tab-4" class='tab-label'>Tab Link 4</label>
+        
+        <article class="content-tab-block" content-for="tab-1" style="visibility:hidden">
+          <h2>Tab Link 1</h2>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into </p>
+        </article>
+
+        <article class="content-tab-block" content-for="tab-2" style="visibility:hidden">
+          <h2>Tab Link 2</h2>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </article>
+
+        <article class="content-tab-block" content-for="tab-3" style="visibility:hidden">
+          <h2>Tab Link 3</h2>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </article>
+
+        <article class="content-tab-block" content-for="tab-4" style="visibility:hidden">
+          <h2>Tab Link 4</h2>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </article>
+
+    </article>
+  </section>
+  </body>
+</html>

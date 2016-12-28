@@ -1,0 +1,20 @@
+.radio-btn:checked + .tab-label {
+  background: rgba(232, 139, 0, 0.98);
+  color: #fff;
+}
+[data-tab="tab-with-no-parent-bound"] .content-tab-block {
+  top: 38px;
+  transform:scale(0);
+}
+
+#tab-1:checked ~ [content-for="tab-1"],
+#tab-2:checked ~ [content-for="tab-2"],
+#tab-3:checked ~ [content-for="tab-3"],
+#tab-4:checked ~ [content-for="tab-4"] {
+  visibility: visible !important;
+  opacity: 1;
+  position: relative;
+  top: 0;
+  z-index: 1;
+  transform:scale(1);
+}

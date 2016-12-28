@@ -1,0 +1,87 @@
+body {
+  font: normal 16px/1.2 arial, "Times New Roman", Times, serif;
+  color: #fff;
+  background: #0f6384;
+}
+.section {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 40px;
+}
+.data-section {
+  margin-top: 20px;
+  position: relative;
+}
+
+.data-action {
+  list-style: none;
+}
+.tab-label {
+  padding: 10px;
+  display: inline-block;
+  background: #f2f2f2;
+  cursor: pointer;
+  color: #000;
+  margin: 5px 0;
+}
+.hide {
+  display: none;
+}
+input[name='tabStyle']:checked +  .tab-label {
+  background: #000;
+  color: #fff;
+}
+#tab-with-parent-bound:checked + label {
+  background: lightseagreen;
+}
+#tab-with-no-parent-bound:checked + label {
+  background: rgba(232, 139, 0, 0.98);
+}
+
+/*tab style*/
+#tab-with-parent-bound:checked ~ [data-tab="tab-with-parent-bound"],
+#tab-with-no-parent-bound:checked ~ [data-tab="tab-with-no-parent-bound"] {
+  display: block;
+}
+
+#tab1:checked ~ .data-action [for="tab1"],
+#tab2:checked ~ .data-action [for="tab2"],
+#tab3:checked ~ .data-action [for="tab3"],
+#tab4:checked ~ .data-action [for="tab4"]{
+  background: lightseagreen;
+  color: #fff;
+}
+
+/*controlling to show selected tab content*/
+.data-content {
+  position: relative;
+}
+
+.content-tab-block {
+  visibility: hidden;
+  padding: 20px 0;
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  top: 0;
+}
+
+#tab1:checked ~ .data-content [for="tab1"],
+#tab2:checked ~ .data-content [for="tab2"],
+#tab3:checked ~ .data-content [for="tab3"],
+#tab4:checked ~ .data-content [for="tab4"] {
+  visibility: visible !important;
+  opacity: 1;
+  position: relative;
+}
+/*tab style ends*/
+
+.price {
+  font-size: 20px;
+  display: block;
+}
+.price::nth-word(-n+2)  {
+  font-size: 40px;
+}

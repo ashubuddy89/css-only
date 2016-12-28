@@ -1,0 +1,82 @@
+body {
+  font: 14px/1.2 arial, "Times New Roman", Times, serif;
+  color: #5a5a5a;
+}
+.section {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.data-action {
+  list-style: none;
+}
+.tab-label {
+  padding: 10px;
+  display: inline-block;
+  background: #5a5a5a;
+  cursor: pointer;
+  margin: 5px 0;
+  color: #fff;
+}
+.hide {
+  display: none;
+}
+h1 {
+  font-size: 40px;
+}
+input#tab1:checked ~ .data-action label[for="tab1"],
+input#tab2:checked ~ .data-action label[for="tab2"],
+input#tab3:checked ~ .data-action label[for="tab3"],
+input#tab4:checked ~ .data-action label[for="tab4"]{
+  background: lightseagreen;
+}
+.link {
+  cursor: pointer;
+  background: blue;
+  color: #fff;
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+.modal-dismiss-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 5px;
+  background: red;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 70%;
+}
+
+/*controlling to show selected tab content*/
+.content-modal-block {
+  transition: all 0.5s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.92);
+  transform:scale(0);
+  padding: 20px;
+}
+
+.modal-dismiss-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+input#tab1:checked ~ .content-modal-block[for="tab1"],
+input#tab2:checked ~ .content-modal-block[for="tab2"],
+input#tab3:checked ~ .content-modal-block[for="tab3"] {
+  display: block !important;
+  transform:scale(1);  
+}

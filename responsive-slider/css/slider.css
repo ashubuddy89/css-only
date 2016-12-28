@@ -1,0 +1,90 @@
+body {
+  font: 14px/1.1 arial, "Times New Roman", Times, serif;
+  color: #5a5a5a;
+}
+img {
+  vertical-align: top;
+  max-width: 100%;
+}
+.section {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.slide-link {
+  padding: 3px 5px;
+  display: inline-block;
+  background: #5a5a5a;
+  cursor: pointer;
+  margin: 5px 0;
+  color: #fff;
+  line-height: normal;
+}
+.hide {
+  display: none;
+}
+h1 {
+  font-size: 40px;
+}
+input#slide1:checked ~ .data-action label[for="slide1"],
+input#slide2:checked ~ .data-action label[for="slide2"],
+input#slide3:checked ~ .data-action label[for="slide3"]{
+  background: lightseagreen;
+}
+
+/*controlling to show selected tab content*/
+.slider-container {
+  max-width: 1000px;
+}
+.slide-block {
+  position: relative;  
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.slide-block img {
+  max-width: 100%;
+  transition: all 0.8s;
+  margin-right: -4px;
+  opacity: 0;
+}
+.slide-block .img-1 {
+  transform: translate(0,0);
+}
+.slide-block .img-2,
+.slide-block .img-3 {
+  transform: translate(100%,0);
+}
+
+/*input#slide1:checked ~ .slider-container .img-1 {
+  left: 0;
+}
+input#slide2:checked ~ .slider-container .img-1,
+input#slide3:checked ~ .slider-container .img-1,
+input#slide3:checked ~ .slider-container .img-2 {
+  left: -100%;
+}
+input#slide2:checked ~ .slider-container .img-2 {
+  left: 0;
+}
+input#slide3:checked ~ .slider-container .img-3 {
+  left: 0;
+}*/
+
+input#slide1:checked ~ .slider-container .img-1 {
+  transform: translateX(0);
+}
+input#slide1:checked ~ .slider-container .img-1,
+input#slide2:checked ~ .slider-container .img-2,
+input#slide3:checked ~ .slider-container .img-3 {
+  opacity: 1;
+}
+input#slide2:checked ~ .slider-container .img-2,
+input#slide2:checked ~ .slider-container .img-1,
+input#slide3:checked ~ .slider-container .img-1 {
+  transform: translateX(-100%);
+}
+input#slide3:checked ~ .slider-container .img-3,
+input#slide3:checked ~ .slider-container .img-2 {
+  transform: translateX(-200%);
+}

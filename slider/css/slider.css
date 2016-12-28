@@ -1,0 +1,60 @@
+body {
+  font: 14px/1.2 arial, "Times New Roman", Times, serif;
+  color: #5a5a5a;
+}
+img {
+  vertical-align: top;
+  max-width: 100%;
+}
+.section {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.slide-link {
+  padding: 3px 5px;
+  display: inline-block;
+  background: #5a5a5a;
+  cursor: pointer;
+  margin: 5px 0;
+  color: #fff;
+  line-height: normal;
+}
+.hide {
+  display: none;
+}
+h1 {
+  font-size: 40px;
+}
+input#slide1:checked ~ .data-action label[for="slide1"],
+input#slide2:checked ~ .data-action label[for="slide2"],
+input#slide3:checked ~ .data-action label[for="slide3"]{
+  background: lightseagreen;
+}
+
+/*controlling to show selected tab content*/
+.slider-container {
+  max-width: 1000px;
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.slide-block {
+  position: relative;  
+  width: 300%;
+  transition: left 1s;
+}
+.slide-block img {
+  max-width: 1000px;
+  float: left;
+}
+input#slide1:checked ~ .slider-container .slide-block {
+  left: 0;
+}
+input#slide2:checked ~ .slider-container .slide-block {
+  left: -100%;
+}
+input#slide3:checked ~ .slider-container .slide-block {
+  left: -200%;
+}
