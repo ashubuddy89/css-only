@@ -1,0 +1,197 @@
+body {
+  font: normal 16px/1.2 arial, "Times New Roman", Times, serif;
+  color: #fff;
+  background: #2a97d0;
+}
+.section {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+.hide {
+  display: none;
+}
+h1 {
+  font-size: 40px;
+}
+.pull-right {
+  float: right;
+}
+.data-section {
+  margin-top: 20px;
+  position: relative;
+}
+nav {
+  transition: left .35s;
+  left: 0;
+}
+.nav-item {
+  padding: 10px 20px;
+  display: inline-block;
+  background: #f2f2f2;
+  cursor: pointer;
+  color: #000;
+  margin: 0 0 5px;
+}
+
+/*switcher style*/
+.menu-switcher {
+  margin: 10px 0;
+}
+.switch-menu {
+  width: 150px;
+  font-size: 12px;
+  display: inline-block;
+  position: relative;
+  height: 40px;
+  background: #f2f2f2;
+  border-radius: 40px;
+  border: solid 1px #cacaca;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+  transition: background 0.2s;
+}
+.switch-menu:before {
+  content: 'mobile menu';
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left:0;
+  right: 0;
+  color: rgb(243, 95, 66);
+  text-align: right;
+  padding: 0 10px;
+}
+.switch-menu:after {
+  content: '';
+  position: absolute;
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
+  background: #f2f2f2;
+  top: -3px;
+  left: 0;
+  transition: all 0.5s;
+  border: solid 2px #cacaca;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+}
+#swtich-menu:checked ~ .menu-switcher .switch-menu:after {
+  left: calc(100% - 41px);
+}
+#swtich-menu:checked ~ .menu-switcher .switch-menu {
+  background: rgb(243, 95, 66);
+}
+#swtich-menu:checked ~ .menu-switcher .switch-menu:before {
+  text-align: left;
+  content: 'main-menu';
+  color: #fff;
+}
+/*switcher style ends*/
+
+
+/*mobile menu icon style*/
+.menu-bar {
+  width: 32px;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 999999;
+  padding: 10px 0;
+  cursor: pointer;
+  display: none;
+}
+.menu-bar-helper {
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  cursor: pointer;
+  display: block;
+  position: relative;
+}
+.menu-bar-helper::before,
+.menu-bar-helper::after {
+  background: #fff;
+  content: "";
+  left: 0;
+  display: block;
+  height: 3px;
+  position: absolute;
+  width: 100%;  
+  transition: all .35s;
+  cursor: pointer;
+}
+.menu-bar-helper::before {
+  top: -8px;
+}
+.menu-bar-helper::after {
+  bottom: -8px;
+}
+#mobile-menu:checked ~ .menu-bar .menu-bar-helper{
+  height: 0;
+  background: #e94e1b;
+}
+#mobile-menu:checked ~ .menu-bar .menu-bar-helper::before {
+  background: #e94e1b;
+  top: -3px;
+  -webkit-transform: rotate(45deg);
+}
+#mobile-menu:checked ~ .menu-bar .menu-bar-helper::after {
+  background: #e94e1b;
+  bottom: 0;
+  -webkit-transform: rotate(-45deg);
+}
+/*mobile menu icon style ends */
+ 
+
+/* conditional to switch main and mobile Nav */
+#swtich-menu:checked ~ nav {
+  visibility: hidden;
+  opacity: 0;
+  left: -100%;
+  position: fixed;
+}
+
+#swtich-menu:not(:checked) + #mobile-menu:checked ~ nav {
+  position: static;
+  background: none;
+  overflow: inherit;
+  width: auto;
+  transition: none;
+  text-align: center;
+}
+#swtich-menu:not(:checked) + #mobile-menu:checked ~ nav .nav-item{
+  display: inline-block;
+}
+#mobile-menu:checked ~ nav .nav-item,
+#swtich-menu:checked ~ .menu-bar {
+  display: block;
+}
+/* conditional ends */
+
+
+/*controlling mobile nav style with :checked - 
+  in normal case it should be in media query without :checked condition */
+
+#mobile-menu:checked ~ nav {
+  position: fixed;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  width: 280px;
+  padding: 0;
+  background: #000;
+  z-index: 60;
+  text-align: left;
+  left: -100%;
+  top: 0;
+  visibility: visible;
+  opacity: 1;
+  margin-top: 0;
+}
+/*mobile mediq query nav ends*/
+
+/* control to show the mobile menu nav */
+#mobile-menu:checked ~ nav {
+  left: 0;
+}
+/* control to show the mobile menu nav ends */
