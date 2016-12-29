@@ -1,0 +1,56 @@
+body {
+  font: normal 16px/1.2 arial, "Times New Roman", Times, serif;
+  color: #fff;
+  background: #7f97a0;
+}
+.section {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 40px;
+}
+.data-section {
+  margin-top: 20px;
+  position: relative;
+}
+.accordion-label {
+  padding: 10px;
+  display: inline-block;
+  background: #f2f2f2;
+  cursor: pointer;
+  color: #000;
+  display: block;
+  margin: 0 0 5px;
+}
+.hide {
+  display: none;
+}
+.open-accordion-btn:checked +  .accordion-open-label,
+.accordion-close-label {
+  display: none;
+}
+.accordion-close-label {
+  background: darkblue;
+  color: #fff;
+}
+.open-accordion-btn:checked ~ .accordion-close-label {
+  display: block;
+}
+.accordion-content-block {
+  height: 0;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+}
+.accordion-content-block h2 {
+  margin-top: 10px;
+}
+.open-accordion-btn:checked:checked ~ 
+.accordion-content-block {
+  padding-bottom: 20px;
+  visibility: visible;
+  opacity: 1;
+  height: auto;
+}

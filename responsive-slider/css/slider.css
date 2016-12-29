@@ -71,13 +71,13 @@ input#slide3:checked ~ .slider-container .img-3 {
   left: 0;
 }*/
 
-input#slide1:checked ~ .slider-container .img-1 {
-  transform: translateX(0);
-}
 input#slide1:checked ~ .slider-container .img-1,
 input#slide2:checked ~ .slider-container .img-2,
 input#slide3:checked ~ .slider-container .img-3 {
   opacity: 1;
+}
+input#slide1:checked ~ .slider-container .img-1 {
+  transform: translateX(0);
 }
 input#slide2:checked ~ .slider-container .img-2,
 input#slide2:checked ~ .slider-container .img-1,
