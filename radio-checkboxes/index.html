@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Checkbox/Radio/Toggle menu/ file button With CSS</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <link rel="stylesheet" type="text/css" href="css/radio-checkboxes.css"/>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <section class="section">
+    <article class='data-section'>
+      <h1>
+        <center>Styling Radio - Checkbox - Toggle menu and File buttons</center>
+      </h1>
+      
+      <div class="hr" data-title="Style Checkboxes Button"></div>
+
+      <!-- checkboxes -->
+      <label class="custom-style-block">
+        <input type="checkbox" class="custom-input-style" tabindex="1" checked/>
+        <span class="input-helper c-checkbox">Option 1</span>
+      </label>
+
+      <label class="custom-style-block">
+        <input type="checkbox" class="custom-input-style" tabindex="2"/>
+        <span class="input-helper c-checkbox">Option 2</span>
+      </label>
+
+      <label class="custom-style-block">
+        <input type="checkbox" class="custom-input-style" tabindex="3"/>
+        <span class="input-helper c-checkbox">Option 3</span>
+      </label>
+
+      <label class="custom-style-block">
+        <input type="checkbox" class="custom-input-style" tabindex="4"/>
+        <span class="input-helper c-checkbox">Option 4</span>
+      </label>
+      <!-- checkboxes ends -->
+
+      <div class="hr" data-title="Style Radio Button"></div>
+
+      <!-- radio buttons -->
+      <label class="custom-style-block">
+        <input type="radio" class="custom-input-style" name="field" tabindex="5" checked/>
+        <span class="input-helper c-radio">Male</span>
+      </label>
+
+      <label class="custom-style-block">
+        <input type="radio" class="custom-input-style" name="field" tabindex="6"/>
+        <span class="input-helper c-radio">Female</span>
+      </label>
+      <!-- radio buttons ends -->
+
+      <div class="hr" data-title="Toggle Button"></div>
+
+      <!-- toggle buttons -->      
+      <label class="toggle-switch" data-on="on" data-off="off">
+        <input type="checkbox" class="custom-input-style"/>
+        <span class="toggle-helper"></span>
+      </label>
+
+      <label class="toggle-switch" data-on="play" data-off="stop" data-bg="red">
+        <input type="checkbox" class="custom-input-style" checked/>
+        <span class="toggle-helper"></span>
+      </label>
+
+      <label class="toggle-switch" data-on="yes" data-off="no">
+        <input type="checkbox" class="custom-input-style"/>
+        <span class="toggle-helper"></span>
+      </label>
+      <!-- toggle buttons ends -->
+
+      <div class="hr" data-title="File Button- using jquery to get the input file value to show file name"></div>
+
+      <label class="custom-file-button lg">
+        <input type='file' class="file-btn">
+        <span class="file-btn-helper">Browse File</span>
+        <small class="file-fake-path"></small>
+      </label>
+
+      <div class="hr" class="no-title"></div>
+    </article>
+  </section>
+  </body>
+
+  <script type="text/javascript">
+    var fileValRegexp  = /(........)?(.*)(....)\.(.*)/;
+    $(".custom-file-button .file-btn").on('change', function(){
+      var $thisVal = $(this).val().split("\\").pop(),
+          regexVal = $thisVal.match(fileValRegexp),
+          $fileNameElem = $(this).siblings('.file-fake-path');
+      if(regexVal == null) {
+        $fileNameElem.text($thisVal);
+        return ;
+      }
+      if(regexVal[1] != undefined){
+        $fileNameElem.text(regexVal[1] + "..." + regexVal[3] + "." + regexVal[4]);
+      }else{
+        $fileNameElem.text(regexVal[0]);
+      }
+    })
+  </script>
+</html>

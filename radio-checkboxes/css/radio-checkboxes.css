@@ -1,0 +1,209 @@
+body {
+  font: 14px/1.2 arial, "Times New Roman", Times, serif;
+  color: #5a5a5a;
+  padding: 0;
+}
+.section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.hide {
+  display: none;
+}
+h1 {
+  font-size: 35px;
+}
+.hr {
+  margin: 70px 0 30px;
+  border: none;
+  clear: both;
+}
+.hr:not(.no-title):before{
+  content: attr(data-title);
+  border-top: solid 1px rgba(0,0,0,0.2);
+  display: block;
+  font-weight: bold;
+  font-size: 20px;
+  color: #5a5a5a;
+  padding-top: 30px;
+}
+
+.custom-style-block{
+  cursor: pointer;
+  margin: 0 10px;
+  position: relative;
+}
+
+.custom-input-style {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  cursor: pointer;
+}
+.input-helper {
+  padding-left: 30px;
+  position: relative;
+  line-height: 1.5;
+}
+
+/*checkbox style*/
+.c-checkbox:before {
+  position: absolute;
+  content: " ";
+  width: 15px;
+  height: 15px;
+  background: #f2f2f2;
+  border: solid 1px #cacaca;
+  left: 0;
+  top: 0;
+  border-radius: 3px;
+  font: normal normal normal 14px/1 'FontAwesome';
+  transition: background .5s ease;
+  text-align: center;
+  color: #fff;
+}
+.custom-input-style[type="checkbox"]:checked + .c-checkbox:before {
+  background: #ffa500;
+  border-color: #d0972f;
+  content: "\f00c";
+}
+.custom-input-style:focus + .input-helper:before {
+  box-shadow: 0 0 5px rgba(106,111,130,0.5);
+}
+
+
+/*checkbox style*/
+.c-radio:before,
+.c-radio:after {
+  position: absolute;
+  content: " ";
+  border-radius: 50%;
+  transition: all .2s ease;
+}
+.c-radio:before {
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border: solid 1px #cacaca;
+  left: 0;
+  top: 0;
+  font: normal normal normal 14px/1 'FontAwesome';
+  text-align: center;
+  color: #fff;
+}
+.c-radio:after {
+  width: 9px;
+  height: 9px;
+  left: 4px;
+  top: 4px;  
+  background: #ffa500;
+  transform:scale(0);
+}
+.custom-input-style[type="radio"]:checked + .c-radio {
+  color: #ffa500;
+}
+.custom-input-style[type="radio"]:checked + .c-radio:before {
+  border-color: #ffa500;
+}
+.custom-input-style[type="radio"]:checked + .c-radio:after {
+  transform:scale(1);
+}
+
+
+/* toggle-switch */
+
+.toggle-switch {
+  background: #000;
+  border-radius: 60px;
+  border: solid 1px #cacaca;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+  color: rgba(255,255,255,0.5);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  height: 50px;
+  position: relative;
+  transition: background 0.2s;
+  width: 150px;
+}
+.toggle-switch .toggle-helper,
+.toggle-switch:before,
+.toggle-switch:after {
+  position: absolute;
+  top: 50%;
+  transition: all 0.3s;
+  transform:translateY(-50%);
+  text-transform: uppercase;
+}
+.toggle-switch .toggle-helper {
+  background: #fff;
+  border-radius: 50%;
+  display: block;
+  height: 40px;
+  left: 5px;
+  width: 40px;
+  z-index: 1;
+}
+.toggle-switch:before {
+  content: attr(data-on);
+  left: 10px;
+  color: #ffa500;
+}
+.toggle-switch:after {
+  content: attr(data-off);
+  right: 12px;
+  text-align: right;
+}
+
+.toggle-switch input:checked + .toggle-helper {
+  left: calc(100% - 45px);
+  background: #ffa500;
+}
+
+/*file button*/
+.custom-file-button {
+  position: relative;
+  display: block;
+}
+.custom-file-button + .custom-file-button {
+  margin-top: 30px;
+}
+.custom-file-button:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.custom-file-button .file-btn{
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  width: 0;
+  z-index: -1;
+}
+.custom-file-button .file-btn-helper {
+  background: #1a8dcb;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  text-transform: uppercase;
+  width: 150px;
+  text-align: center;
+}
+.custom-file-button .file-btn-helper,
+.custom-file-button .file-fake-path:not(:empty) {
+  height: 44px;
+  line-height: 46px;
+  vertical-align: middle;    
+}
+.custom-file-button .file-fake-path:not(:empty){
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: -0.04em;
+  max-width: calc(100% - 155px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
